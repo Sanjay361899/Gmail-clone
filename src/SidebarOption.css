@@ -25,6 +25,7 @@
 .sidebarOption > p {
     display: none;
     font-weight: 300;
+    margin-left: auto;
 }
 .sidebarOption:hover > p{
     display: inline;
