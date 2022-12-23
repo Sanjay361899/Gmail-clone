@@ -3,6 +3,7 @@ import './EmailList.css'
 import { Checkbox, IconButton } from '@mui/material'
 import { ArrowDropDown, ChevronLeft, ChevronRight, Inbox, KeyboardHide, LocalOffer, MoreVert, People, Redo, Settings } from '@mui/icons-material'
 import Section from './Section'
+import EmailRow from './EmailRow'
 const EmailList = () => {
   return (
   <div className="emailList">
@@ -40,7 +41,18 @@ const EmailList = () => {
         <Section Icon={LocalOffer} title='Promotions' color="green" />
     </div>
     <div className="emailList__list">
-        
+        <EmailRow
+        title="Twitch"
+        subject="Hey Fellow Streamer!!!"
+        description="This is a test"
+        time="10pm"
+        />
+             <EmailRow
+        title="Twitch"
+        subject="Hey Fellow Streamer!!!"
+        description="This is a test This is a test This is a test This is a test "
+        time="10pm"
+        />
     </div>
   </div>
     )
