@@ -3,8 +3,11 @@ import './Mail.css'
 import { IconButton } from '@mui/material'
 import { ArrowBack, CheckCircle, Delete, Download, Email, Error, LabelImportant, MoreVert, MoveToInbox, Print, UnfoldMore, WatchLater } from '@mui/icons-material'
 import { useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { selectSelectMail } from './features/mailSlice'
 function Mail() {
   const navigate=useNavigate();
+  const {id, title, subject, description, time}=useSelector(selectSelectMail)
   return (
   <div className="mail">
     <div className="mail__tools">
@@ -30,6 +33,15 @@ function Mail() {
           <Download/>
          </IconButton>
       </div>
+    </div>
+    <div className="mail__body">
+      <div className="mail__bodyHeader">
+        <h2>{subject}</h2>
+        <LabelImportant className='mail__important'/>
+        <p>{title}</p>
+        <p className='mail__time'>{time}</p>
+      </div>
+      <div className="mail__message">{description}</div>
     </div>
   </div>      
   )

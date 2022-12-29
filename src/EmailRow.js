@@ -6,9 +6,13 @@ import {
 } from "@mui/icons-material";
 import { Checkbox, IconButton } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { openSelectMail } from "./features/mailSlice";
 const EmailRow = ({ id, title, subject, description, time }) => {
   const navigate = useNavigate();
+  const dispatch=useDispatch();
   const getMail = () => {
+    dispatch(openSelectMail({id, title, subject, description, time}))
     navigate("/mail");
   };
   return (
